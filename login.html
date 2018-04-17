@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="http://weui.shanliwawa.top/weui/style/weui.css">
+    <link rel="stylesheet" href="http://weui.shanliwawa.top/weui/style/weui2.css">
+    <script src="js/zepto.min.js"></script>
+</head>
+
+<body ontouchstart="" class="page-bg">
+    <div class="page-hd">
+        <h1 class="page-hd-title">
+            登录
+        </h1>
+        <p class="page-hd-desc">追踪订单状态</p>
+    </div>
+    <form id="form">
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_hd">
+                    <label class="weui_label">用户名</label>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="text" required pattern="" placeholder="请输入用户名" emptytips="用户名不能为空">
+                </div>
+            </div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd">
+                    <label class="weui_label">密码</label>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="password" required pattern="" placeholder="请输入密码" emptytips="密码不能为空">
+                </div>
+            </div>
+        </div>
+        <div class="weui_btn_area">
+            <a class="weui_btn weui_btn_primary" href="javascript:" id="formSubmitBtn">登录</a>
+        </div>
+    </form>
+    <script>
+        var $form = $("#form");
+        $form.form();
+        $("#formSubmitBtn").on("click", function () {
+            $form.validate(function (error) {
+                console.log(error);
+                if (!error) {
+                    $.showLoading('正在登录...');
+                    setTimeout(function () {
+                        $.hideLoading();
+                    }, 3000)
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
