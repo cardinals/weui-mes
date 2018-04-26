@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>订单查询</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <link rel="stylesheet" href="http://weui.shanliwawa.top/weui/style/weui.css">
-    <link rel="stylesheet" href="http://weui.shanliwawa.top/weui/style/weui2.css">
+    <link rel="stylesheet" href="css/weui.css">
+    <link rel="stylesheet" href="css/weui2.css">
     <script src="js/zepto.min.js"></script>
     <script src="js/updown.js"></script>
     <script>
@@ -147,6 +147,28 @@
                     });
                 }
             });
+
+            $('.searchbar_wrap').searchBar({
+                cancelText: "取消",
+                searchText: '客户名称/手机号',
+                onfocus: function (value) {
+
+                },
+                onblur: function (value) {
+
+                },
+                oninput: function (value) {
+
+                },
+                onsubmit: function (value) {},
+                oncancel: function () {
+
+                },
+
+                onclear: function () {
+
+                }
+            });
         });
     </script>
 </head>
@@ -160,18 +182,7 @@
     </div>
     <div class="searchbar_wrap">
         <div class="weui_search_bar">
-            <form class="weui_search_outer">
-                <div class="weui_search_inner">
-                    <i class="weui_icon_search"></i>
-                    <input type="search" class="weui_search_input" id="weui_search_input" placeholder="客户名称/手机号" required="">
-                    <a href="javascript:" class="weui_icon_clear"></a>
-                </div>
-                <label for="weui_search_input" class="weui_search_text" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-                    <i class="weui_icon_search"></i>
-                    <span>客户名称/手机号</span>
-                </label>
-            </form>
-            <a href="javascript:" class="weui_search_cancel">取消</a>
+
         </div>
     </div>
     <div class="weui_panel weui_panel_access">
